@@ -28,6 +28,10 @@ class Setting extends CActiveRecord
 		return 'setting';
 	}
 
+	public function primaryKey() {
+		return ['id_site'];
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -45,7 +49,7 @@ class Setting extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id_site, name, description, keywords, favicon, logo, address, phone, email, facebook, instagram, twitter, status', 'safe', 'on'=>'search'),
-		);
+			);
 	}
 
 	/**
@@ -56,7 +60,7 @@ class Setting extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		);
+			);
 	}
 
 	/**
@@ -78,7 +82,7 @@ class Setting extends CActiveRecord
 			'instagram' => 'Instagram',
 			'twitter' => 'Twitter',
 			'status' => 'Status',
-		);
+			);
 	}
 
 	/**
@@ -115,7 +119,7 @@ class Setting extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-		));
+			));
 	}
 
 	/**

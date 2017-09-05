@@ -31,6 +31,10 @@ class User extends CActiveRecord
 		return 'user';
 	}
 
+	public function primaryKey() {
+		return ['id_user'];
+	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -50,7 +54,7 @@ class User extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id_user, create_time, update_time, visit_time, fullname, gender, birth, email, username, password, level, division, image, ipaddress, active, status', 'safe', 'on'=>'search'),
-		);
+			);
 	}
 
 	/**
@@ -62,7 +66,7 @@ class User extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'Division'=>array(self::BELONGS_TO,'Division','division'),
-		);
+			);
 	}
 
 	/**
@@ -87,7 +91,7 @@ class User extends CActiveRecord
 			'ipaddress' => 'IP Address',
 			'active' => 'Aktif',
 			'status' => 'Status',
-		);
+			);
 	}
 
 	/**
@@ -127,7 +131,7 @@ class User extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-		));
+			));
 	}
 
 	/**
@@ -145,10 +149,10 @@ class User extends CActiveRecord
 		$_first = "1";
 		$no = $_first; 
 		$last_po = $this->find( 
-		array(
-			"select"=>"id_user",
-			"order" => "id_user DESC"
-		));
+			array(
+				"select"=>"id_user",
+				"order" => "id_user DESC"
+				));
 		if($last_po != null){
 			$_no = $last_po->id_user;
 			$_no++;

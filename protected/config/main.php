@@ -90,6 +90,10 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+			'tablePrefix'=>'ss_',
+			'enableProfiling'=>true,
+			'enableParamLogging'=>true,
+			'schemaCachingDuration'=>1000
 			),
 
 		'phpThumb'=>array(

@@ -10,13 +10,13 @@ class WebUser extends CWebUser{
 		}
 		return $this->_model;
 	}
-		
+	
 	public function getLevel()
 	{
 		$user=$this->loadModel();
 		if($user)
 			return $user->level;
 		return 100;
-		}
 	}
+}
 ?>
